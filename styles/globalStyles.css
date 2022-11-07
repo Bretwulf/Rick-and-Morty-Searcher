@@ -39,6 +39,7 @@
     --font-regular:500;
     --font-thin:400;
     /* ------------------------------ element-sizes ----------------------------- */
+    --width100: 100%;
     --charcard-desktop-width:25rem;
     --charcard-padding: .625rem;
     --charcard-pic-width: 10.75rem;
@@ -70,5 +71,6 @@
         --radius1: 1rem;
         --radius-round: 50%;
         --box-shadow: 0px 2px 16px 0px rgba(137, 133, 133, 0.75);
+
     }  
 }
