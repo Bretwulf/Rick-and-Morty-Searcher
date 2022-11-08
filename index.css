@@ -1,6 +1,9 @@
 #cardsSection{
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 2rem;
     justify-content: center;
+}
+#observer{
+    height:1.25rem;
 }
