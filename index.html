@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/styles/globalStyles.css">
 <link rel="stylesheet" href="/styles/text.css">
 <link rel="stylesheet" href="/styles/cards.css">
+<link rel="stylesheet" href="/styles/buttons.css">
 <link rel="stylesheet" href="/styles/modal.css">
 <link rel="stylesheet" href="/styles/searchbar.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,14 +27,21 @@
 <body>
     <header id="Header"></header>
     <main>
-        <section id="filterSection">
-
+        <section id="filterSection" class="container">
+            <button class="filter-buttons" id="all-filter">All</button>
+            <button class="filter-buttons">Alive</button>
+            <button class="filter-buttons">Dead</button>
+            <button class="filter-buttons">Female</button>
+            <button class="filter-buttons">Male</button>
+            <button class="filter-buttons">Genderless</button>
+            <button class="filter-buttons">Unknown</button>
         </section>
         <ul id="cardsSection">
         </ul>
     </main>
     <script src="index.js"></script>
     <script src="./scripts/cardRender.js"></script>
+    <script src="./scripts/filterBtn.js"></script>
 
 </body>
 
