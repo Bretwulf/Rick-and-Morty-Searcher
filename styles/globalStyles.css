@@ -15,13 +15,11 @@
 
 
 
-@media(min-width: 900px){
 
-}
 
 :root{
     /* --------------------------------- colors --------------------------------- */
-    --color-alive-green: #55d790;
+    --color-alive-green: #1d824b;
     --color-alien-green:#84ae27;
     --color-background: #ffff;
     --color-grey100: #a0b3af;
@@ -41,8 +39,7 @@
     /* ------------------------------ element-sizes ----------------------------- */
     --charcard-desktop-width:31.25rem;
     --charcard-padding: .625rem;
-    --charcard-pic-width: 10.75rem;
-    --charcard-pic-height: 11.75rem;
+    --charcard-pic-size: 10.75rem;
     --favorite-marker-size: 2rem;
     --alive-button-padding: .3125rem .9375rem;
     --favorite-button-width: 14.5625rem;
@@ -71,4 +68,12 @@
         --radius-round: 50%;
         --box-shadow: 0px 2px 16px 0px rgba(137, 133, 133, 0.75);
     }  
+}
+
+@media(max-width: 900px){
+:root{
+    --charcard-desktop-width:20rem;
+    --charcard-padding: .625rem;
+    --charcard-pic-size: 10.75rem;
+}
 }
