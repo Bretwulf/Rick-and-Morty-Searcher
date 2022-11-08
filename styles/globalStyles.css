@@ -39,12 +39,12 @@
     --font-regular:500;
     --font-thin:400;
     /* ------------------------------ element-sizes ----------------------------- */
-    --charcard-desktop-width:31.25rem;
+    --charcard-desktop-width:25rem;
     --charcard-padding: .625rem;
     --charcard-pic-width: 10.75rem;
     --charcard-pic-height: 11.75rem;
     --favorite-marker-size: 2rem;
-    --alive-button-padding: .3125rem .9375rem;
+    --alive-button-padding: .3125rem 15rem;
     --favorite-button-width: 14.5625rem;
     --favorite-button-padding: .3125rem 15rem;
     --favorite-button-icon: 2.5625rem;
