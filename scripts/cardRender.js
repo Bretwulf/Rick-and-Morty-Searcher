@@ -47,10 +47,12 @@ async function getEpisode (param){
 
     
 async function observer(){
-    document.querySelector("main").insertAdjacentHTML("beforeend","<div id='observer'><p>observer</p></div>")
+    document.querySelector("main").insertAdjacentHTML("beforeend","<div id='observer'></div>")
+    const cardsSection = document.getElementById("cardsSection")
+    console.log(cardsSection)
     
     let observer = new IntersectionObserver(async (entries)=>{
-        if (entries[0].isIntersecting===true){
+        if (entries[0].isIntersecting===true && cardsSection.children.length!==0){
             console.log(nextPage)
             if(nextPage!==null){
             await renderCards(nextPage)}
@@ -87,10 +89,45 @@ cardSection.innerHTML=""}
         </div>
         </li>
         `)
+        /* -------------------------------------------------------------------------- */
+        if(element.species==="Alien"){
+        document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-alien")} 
+        else if(element.species==="Humanoid") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-humanoid")
+        }
+        else if(element.species==="Mythological Creature") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-mythological-creature")
+        }
+        else if(element.species==="unknown") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-unknown")
+        }
+        else if(element.species==="Disease") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-disease")
+        }
+        else if(element.species==="Poopybutthole") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-poopy-butthole")
+        }
+        else if(element.species==="Robot") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-robot")
+        }
+        else if(element.species==="Animal") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-animal")
+        }
+        else if(element.species==="Cronenberg") {
+          document.getElementById(`card${element.id}`).querySelector(".species-pip").classList.add("species-pip-cronenberg")
+        }
+        /* -------------------------------------------------------------------------- */
+        if(element.status==="Dead"){
+          document.getElementById(`card${element.id}`).querySelector(".status-pip").classList.add("status-pip-dead")
+        }
+        else if(element.status==="unknown"){
+          document.getElementById(`card${element.id}`).querySelector(".status-pip").classList.add("status-pip-unknown")
+        }
     });
+  
     
 
     
 }
 observer() //adicionando obvserver no fim da página!
-renderCards("https://rickandmortyapi.com/api/character?status=alive",true);//render de quando o usuário carrega a página.
+renderCards("https://rickandmortyapi.com/api/character",true);//render de quando o usuário carrega a página.

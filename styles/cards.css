@@ -1,42 +1,121 @@
-.card-image{
-    object-fit: cover;
+.card-image {
+    object-fit: contain;
 }
-.status-pip{
+
+.status-pip {
     width: max-content;
     padding: var(--alive-button-padding);
     background-color: var(--color-alive-green);
     border-radius: var(--radius1);
-    
+
 }
 
-.image-div{
-    position: relative;
-    top:0px;
-    height: var(--charcard-pic-width);
-    width: var(--charcard-pic-width);
+.status-pip-unknown {
+    width: max-content;
+    padding: var(--alive-button-padding);
+    background-color: darkslategrey;
+    border-radius: var(--radius1);
 }
-.species-pip{
-    width:var(--width100);
+
+.image-div {
+    position: relative;
+    top: 0px;
+    height: var(--charcard-pic-size);
+    width: var(--charcard-pic-size);
+}
+
+.species-pip {
+    background-color: rgb(35, 35, 35);
+    width: var(--width100);
     position: absolute;
     bottom: 0px;
     width: 100%;
 }
 
-.card-base{
+.species-pip-alien {
+    background-color: var(--color-alien-green);
+}
+
+.species-pip-unknown {
+    background-color: rgb(176, 96, 176);
+}
+
+.species-pip-mythological-creature {
+    background-color: rgb(97, 97, 241);
+}
+
+.species-pip-humanoid {
+    background-color: rgb(96, 96, 96);
+}
+
+.species-pip-disease {
+    background-color: rgb(122, 123, 24);
+}
+
+.species-pip-poopy-butthole {
+    background-color: rgb(76, 38, 10);
+}
+
+.species-pip-robot {
+    background-color: rgb(17, 55, 118);
+}
+
+.species-pip-animal {
+    background-color: rgb(186, 21, 65);
+}
+
+.species-pip-cronenberg {
+    background-color: rgb(26, 108, 80);
+}
+
+.status-pip-dead {
+    background-color: rgb(212, 53, 53);
+}
+
+
+
+.card-base {
     padding: var(--charcard-padding);
     background-color: var(--color-background);
-    width:var(--charcard-desktop-width);
+    width: var(--charcard-desktop-width);
     display: flex;
     gap: .75rem;
     border: solid 1px var(--color-grey100);
     align-items: center;
     border-radius: var(--radius1);
-    
+
 }
 
-.card-content{
+.card-content {
     display: flex;
     flex-direction: column;
     gap: 12px;
 
+}
+
+@media(max-width:900px) {
+    .card-base {
+        padding: 0px;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .card-content {
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-div {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: max-content;
+        
+    }
+    .card-image{
+        object-fit: contain;
+        width:100%;
+        
+    }
 }
