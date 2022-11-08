@@ -1,0 +1,42 @@
+.card-image{
+    object-fit: cover;
+}
+.status-pip{
+    width: max-content;
+    padding: var(--alive-button-padding);
+    background-color: var(--color-alive-green);
+    border-radius: var(--radius1);
+    
+}
+
+.image-div{
+    position: relative;
+    top:0px;
+    height: var(--charcard-pic-width);
+    width: var(--charcard-pic-width);
+}
+.species-pip{
+    width:var(--width100);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.card-base{
+    padding: var(--charcard-padding);
+    background-color: var(--color-background);
+    width:var(--charcard-desktop-width);
+    display: flex;
+    gap: .75rem;
+    border: solid 1px var(--color-grey100);
+    align-items: center;
+    border-radius: var(--radius1);
+    
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
