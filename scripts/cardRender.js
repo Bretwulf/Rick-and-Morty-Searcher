@@ -108,12 +108,13 @@ reseta a página ou só adiciona conteúdo. Como underfined
         .addEventListener("click", () => {
           const contentModal = document.createElement("div");
           contentModal.classList.add("container_content");
+          contentModal.id = "list_modal";
           contentModal.insertAdjacentHTML(
             "beforeend",
             `
             <div class="header_image">
             <img src="${element.image}" alt="">
-            <h3>${element.species} </h3>
+            <h3 class="specie">${element.species} </h3>
             </div>
             <div class="content_modal">
             <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Name:</span> ${element.name} </p>
@@ -121,7 +122,7 @@ reseta a página ou só adiciona conteúdo. Como underfined
             <div class="paragraphs">
             <span class="font16 font-regular font-color-adaptable">Status:</span>
            
-            <p class="status-pip font12 font-thin font-color-white-fixed">  ${element.status} </p>
+            <p class="status-pip font12 font-thin font-color-white-fixed stt" >  ${element.status} </p>
             </div>
             <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Last know location:</span> ${element.location.name} </p>
             <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">First seen in:</span> ${firstSeen.name} </p>
@@ -129,6 +130,17 @@ reseta a página ou só adiciona conteúdo. Como underfined
           
           `
           );
+          if (element.status === "Dead") {
+            document
+              .getElementById(`card${element.id}`)
+              .querySelector(".stt")
+              .classList.add("status-pip-dead");
+          } else if (element.status === "unknown") {
+            document
+              .getElementById(`card${element.id}`)
+              .querySelector(".stt")
+              .classList.add("status-pip-unknown");
+          }
 
           openModal(contentModal);
         });
