@@ -1,3 +1,5 @@
+import { renderCards } from "./cardRender.js";
+
 const select = document.querySelector('select')
 const input = document.querySelector("input");
 select.addEventListener("change", search)

@@ -1,7 +1,8 @@
-
-async function filter(){
+import { renderCards } from "./cardRender.js";
+export async function filter(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const input = document.querySelector('input')
+    
 
     buttons.forEach(btn =>{
         btn.addEventListener("click", async ()=>{
@@ -43,7 +44,7 @@ async function filter(){
     })
 }
 
-function buttonSelected(){
+export function buttonSelected(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const pressedButton = localStorage.getItem("@rick-and-morty: filterButton")
     const buttonAll = document.getElementById("all-filter")
@@ -58,11 +59,7 @@ function buttonSelected(){
         })
         if(btn.innerText === pressedButton){
             btn.click()
-        }else if (pressedButton === null){
-            buttonAll.click()
         }
     })
 }
 
-filter()
-buttonSelected()
