@@ -1,7 +1,12 @@
+import { openModal } from "./modal.js";
+
 let nextPage = "";
+
+
 
 export async function getChars(param) {
   const options = { method: "GET" };
+
   /* -------------------------------------------------------------------------- */
   try {
     const response = await fetch(
@@ -21,8 +26,10 @@ export async function getChars(param) {
   }
 }
 
+
 export async function getEpisode(param) {
   const options = { method: "GET" };
+
   try {
     const response = await fetch(`${param}`, options);
 
@@ -79,7 +86,7 @@ reseta a página ou só adiciona conteúdo. Como underfined
       cardSection.insertAdjacentHTML(
         "beforeend",
         `
-        <li id="card${element.id}" class="card-base animate__animated animate__fadeInUp animate__fast">
+        <li id="card${element.id}" class="card-base animate__animated animate__fadeInUp animate__fast event">
         <div class="image-div">
          <img class="card-image" src=${element.image}>
          <p class="text-center font16 font-regular font-color-adaptable species-pip">${element.species}</p>
@@ -95,6 +102,49 @@ reseta a página ou só adiciona conteúdo. Como underfined
         </li>
         `
       );
+
+      document
+        .getElementById(`card${element.id}`)
+        .addEventListener("click", () => {
+          const contentModal = document.createElement("div");
+          contentModal.classList.add("container_content");
+          contentModal.id = "list_modal";
+          contentModal.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="header_image">
+            <img src="${element.image}" alt="">
+            <h3 class="specie">${element.species} </h3>
+            </div>
+            <div class="content_modal">
+            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Name:</span> ${element.name} </p>
+            
+            <div class="paragraphs">
+            <span class="font16 font-regular font-color-adaptable">Status:</span>
+           
+            <p class="status-pip font12 font-thin font-color-white-fixed stt" >  ${element.status} </p>
+            </div>
+            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Last know location:</span> ${element.location.name} </p>
+            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">First seen in:</span> ${firstSeen.name} </p>
+            </div>
+          
+          `
+          );
+          if (element.status === "Dead") {
+            document
+              .getElementById(`card${element.id}`)
+              .querySelector(".stt")
+              .classList.add("status-pip-dead");
+          } else if (element.status === "unknown") {
+            document
+              .getElementById(`card${element.id}`)
+              .querySelector(".stt")
+              .classList.add("status-pip-unknown");
+          }
+
+          openModal(contentModal);
+        });
+
       /* -------------------------------------------------------------------------- */
       if (element.species === "Mythological Creature") {
         document
