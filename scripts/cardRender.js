@@ -64,17 +64,17 @@ async function renderCards(param, param2) {
   /*esse if deve ser usado pra decidir se o código 
 reseta a página ou só adiciona conteúdo. Como underfined 
 é uma falsie, por padrão é falso!.*/
+  const characters = await getChars(param);
   if (param2 === true) {
     cardSection.innerHTML = "";
   }
-  const characters = await getChars(param);
-
   if (characters === "There is nothing here") {
     nextPage = null;
     cardSection.innerHTML =
       "<div class='font-color-adaptable font32 font-black'>Não há nenhum resultado para sua busca.</div>";
   } else {
     nextPage = characters.info.next;
+    
     characters.results.forEach(async (element) => {
       const firstSeen = await getEpisode(element.episode[0]);
       cardSection.insertAdjacentHTML(

@@ -2,6 +2,9 @@
 async function filter(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const input = document.querySelector('input')
+    if(localStorage.getItem("@rick-and-morty: filterButton")===null){
+        localStorage.setItem("@rick-and-morty: filterButton","All")
+    }
 
     buttons.forEach(btn =>{
         btn.addEventListener("click", async ()=>{
@@ -58,8 +61,6 @@ function buttonSelected(){
         })
         if(btn.innerText === pressedButton){
             btn.click()
-        }else if (pressedButton === null){
-            buttonAll.click()
         }
     })
 }
