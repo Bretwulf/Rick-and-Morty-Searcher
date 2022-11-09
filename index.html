@@ -9,6 +9,7 @@
 <meta name="keywords" content="Rick, Morty, Search, Page, API">
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="/styles/globalStyles.css">
+<link rel="stylesheet" href="/styles/select.css">
 <link rel="stylesheet" href="/styles/text.css">
 <link rel="stylesheet" href="/styles/cards.css">
 <link rel="stylesheet" href="/styles/buttons.css">
@@ -25,7 +26,31 @@
 </head>
 
 <body>
-    <header id="Header"></header>
+    <header id="Header">
+        <div>
+            <small>
+                <img src="./assets/imgs/searchIcon.png" alt="">
+            </small>
+            <form action="">
+                <input type="text" placeholder="Procurando por um personagem?" maxlength="50">
+                <div class="select-wrapper">
+                    <select name="" id="">
+                        <option value="species" selected disabled>Species</option>
+                        <option value="Alien">Alien</option>
+                        <option value="Animal">Animal</option>
+                        <option value="Cronenberg">Cronenberg</option>
+                        <option value="Disease">Disease</option>
+                        <option value="Human">Human</option>
+                        <option value="Humanoid">Humanoid</option>
+                        <option value="Mythological Creature">Mythological Creature</option>
+                        <option value="Poopybutthole">Poopybutthole</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                    <div class="select_arrow"></div>
+                </div>
+            </form>
+        </div>
+    </header>
     <main>
         <section id="filterSection" class="container">
             <button class="filter-buttons" id="all-filter">All</button>
@@ -42,7 +67,7 @@
     <script src="index.js"></script>
     <script src="./scripts/cardRender.js"></script>
     <script src="./scripts/filterBtn.js"></script>
-
+    <script src="./scripts/search.js"></script>
 </body>
 
 </html>
