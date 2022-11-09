@@ -9,6 +9,7 @@
 <meta name="keywords" content="Rick, Morty, Search, Page, API">
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="/styles/globalStyles.css">
+<link rel="stylesheet" href="/styles/select.css">
 <link rel="stylesheet" href="/styles/text.css">
 <link rel="stylesheet" href="/styles/cards.css">
 <link rel="stylesheet" href="/styles/buttons.css">
@@ -25,24 +26,64 @@
 </head>
 
 <body>
-    <header id="Header"></header>
+    <header id="Header">
+        <div>
+            <small>
+                <img src="./assets/imgs/searchIcon.png" alt="">
+            </small>
+            <form action="">
+                <input type="text" placeholder="Procurando por um personagem?" maxlength="50">
+                <div class="select-wrapper">
+                    <select name="" id="">
+                        <option value="species" selected disabled>Species</option>
+                        <option value="Alien">Alien</option>
+                        <option value="Animal">Animal</option>
+                        <option value="Cronenberg">Cronenberg</option>
+                        <option value="Disease">Disease</option>
+                        <option value="Human">Human</option>
+                        <option value="Humanoid">Humanoid</option>
+                        <option value="Mythological Creature">Mythological Creature</option>
+                        <option value="Poopybutthole">Poopybutthole</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                    <div class="select_arrow"></div>
+                </div>
+            </form>
+        </div>
+    </header>
     <main>
         <section id="filterSection" class="container">
-            <button class="filter-buttons" id="all-filter">All</button>
-            <button class="filter-buttons">Alive</button>
-            <button class="filter-buttons">Dead</button>
-            <button class="filter-buttons">Female</button>
-            <button class="filter-buttons">Male</button>
-            <button class="filter-buttons">Genderless</button>
-            <button class="filter-buttons">Unknown</button>
+            <div id="div-buttons">
+                <button class="filter-buttons" id="all-filter">All</button>
+                <button class="filter-buttons">Alive</button>
+                <button class="filter-buttons">Dead</button>
+                <button class="filter-buttons">Female</button>
+                <button class="filter-buttons">Male</button>
+                <button class="filter-buttons">Genderless</button>
+                <button class="filter-buttons">Unknown</button>
+            </div>
+            <div id="div-select">
+                <select name="" id="select-filter">
+                    <option value="" hidden disabled selected>Filtros</option>
+                    <option value="All">All</option>
+                    <option value="Alive">Alive</option>
+                    <option value="Dead">Dead</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Genderless">Genderless</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
         </section>
         <ul id="cardsSection">
         </ul>
     </main>
     <script type="module" src="index.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="./scripts/cardRender.js"></script>
     <script src="./scripts/filterBtn.js"></script>
-
+    <script src="./scripts/search.js"></script>
 </body>
 
 </html>

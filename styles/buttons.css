@@ -29,3 +29,27 @@
     outline: 2px solid var(--color-alien-green);
     border-radius: 0.25rem;
 }
+
+#div-select{
+    display: none;
+    width: 100%;
+}
+
+#select-filter{
+    color: var(--color-grey100);
+    width: 30%;
+    padding: 7px;
+    text-align: center;
+}
+
+@media (max-width: 600px){
+    #div-buttons{
+        display:  none;
+    }
+    
+    #div-select{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
