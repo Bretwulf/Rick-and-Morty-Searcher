@@ -1,5 +1,5 @@
 
-async function filter(){
+export async function filter(){
     const buttons = document.querySelectorAll(".filter-buttons")
 
     buttons.forEach(btn =>{
@@ -28,7 +28,7 @@ async function filter(){
     })
 }
 
-function buttonSelected(){
+export function buttonSelected(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const pressedButton = localStorage.getItem("@rick-and-morty: filterButton")
     const buttonAll = document.getElementById("all-filter")
@@ -38,16 +38,14 @@ function buttonSelected(){
             buttons.forEach(btn =>{
                 btn.classList.remove("filter-buttons-selected")
             })
-
             btn.classList.add("filter-buttons-selected")
         })
+        
         if(btn.innerText === pressedButton){
             btn.click()
         }else if (pressedButton === null){
+            localStorage.setItem("@rick-and-morty: filterButton", "All")
             buttonAll.click()
         }
     })
 }
-
-filter()
-buttonSelected()

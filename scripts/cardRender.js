@@ -124,4 +124,3 @@ reseta a página ou só adiciona conteúdo. Como underfined
   }
 }
 observer(); //adicionando obvserver no fim da página!
-renderCards("https://rickandmortyapi.com/api/character", true); //render de quando o usuário carrega a página.
