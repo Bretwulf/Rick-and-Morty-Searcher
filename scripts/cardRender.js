@@ -1,3 +1,5 @@
+import { openModal } from "./modal.js";
+
 let nextPage = "";
 
 async function getChars(param) {
@@ -76,11 +78,12 @@ reseta a página ou só adiciona conteúdo. Como underfined
   } else {
     nextPage = characters.info.next;
     characters.results.forEach(async (element) => {
+      console.log(element);
       const firstSeen = await getEpisode(element.episode[0]);
       cardSection.insertAdjacentHTML(
         "beforeend",
         `
-        <li id="card${element.id}" class="card-base animate__animated animate__fadeInUp animate__fast">
+        <li id="card${element.id}" class="card-base animate__animated animate__fadeInUp animate__fast event">
         <div class="image-div">
          <img class="card-image" src=${element.image}>
          <p class="text-center font16 font-regular font-color-adaptable species-pip">${element.species}</p>
@@ -96,6 +99,29 @@ reseta a página ou só adiciona conteúdo. Como underfined
         </li>
         `
       );
+     
+
+        document.getElementById(`card${element.id}`).addEventListener("click", () =>{
+          const contentModal = document.createElement("div");
+          contentModal.classList.add("container_content")
+          contentModal.insertAdjacentHTML(
+            "beforeend",
+            `
+            <img src="${element.image}" alt="">
+            <h3>${element.name} </h3>
+            <div class="content_modal">
+            <p>Specie: ${element.species} </p>
+            <p>Status: ${element.status} </p>
+            <p>Location: ${element.location.name} </p>
+            </div>
+          
+          `
+          );
+          openModal(contentModal);
+        })
+       
+   
+
       /* -------------------------------------------------------------------------- */
       if (element.species === "Alien") {
         document
@@ -159,7 +185,4 @@ reseta a página ou só adiciona conteúdo. Como underfined
   }
 }
 observer(); //adicionando obvserver no fim da página!
-renderCards(
-  "https://rickandmortyapi.com/api/character",
-  true
-); //render de quando o usuário carrega a página.
+renderCards("https://rickandmortyapi.com/api/character", true); //render de quando o usuário carrega a página.

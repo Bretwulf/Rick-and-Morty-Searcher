@@ -1,4 +1,4 @@
-const openModal = (children) => {
+export const openModal = (children) => {
   const body = document.querySelector("body");
 
   const backgroundContainer = document.createElement("section");
@@ -18,24 +18,9 @@ const openModal = (children) => {
       backgroundContainer.remove(document.querySelector(".modal-background"));
     }
   });
-  const clone = children.cloneNode(true);
-  clone.classList.add("modal_clone");
 
   mainContainer.appendChild(closeModalButton);
-  mainContainer.append(clone);
+  mainContainer.append(children);
   backgroundContainer.appendChild(mainContainer);
   body.appendChild(backgroundContainer);
 };
-
-const getCurrentProduct = () => {
-  setTimeout(() => {
-    const liCards = document.querySelectorAll(".event");
-    liCards.forEach((product) => {
-      product.addEventListener("click", () => {
-        openModal(product);
-      });
-    });
-  }, 1000);
-};
-
-getCurrentProduct();
