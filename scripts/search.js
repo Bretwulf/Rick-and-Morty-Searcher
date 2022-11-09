@@ -17,7 +17,6 @@ async function search() {
     if (selectedBtn[0].innerText != 'All') {
       if (selectedBtn[0].innerText == 'Alive' || selectedBtn[0].innerText == 'Dead' || selectedBtn[0].innerText == 'Unknown') {
         filter = `&status=${selectedBtn[0].innerText}`
-        console.log(filter)
       }
       if (selectedBtn[0].innerText == 'Female' || selectedBtn[0].innerText == 'Male' || selectedBtn[0].innerText == 'Genderless') {
         filter = `&gender=${selectedBtn[0].innerText}`;
@@ -25,7 +24,8 @@ async function search() {
     }
 
     if (filter) {
-            if (select.value == "species") {
+      if (select.value == "species" || select.value == "All") {
+              console.log(filter)
               renderCards(
                 `https://rickandmortyapi.com/api/character/?name=${input.value}${filter}`,
                 true
@@ -38,14 +38,12 @@ async function search() {
             }
     } else {
       
-      if (select.value == 'species') {
-        
+      if (select.value == "species" || select.value == "All") {
         renderCards(
           `https://rickandmortyapi.com/api/character/?name=${input.value}`,
           true
         );
       } else {
-  
         renderCards(
           `https://rickandmortyapi.com/api/character/?name=${input.value}&species=${select.value}`,
           true
