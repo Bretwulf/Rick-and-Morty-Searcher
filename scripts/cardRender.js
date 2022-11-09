@@ -1,6 +1,6 @@
 let nextPage = "";
 
-async function getChars(param) {
+export async function getChars(param) {
   const options = { method: "GET" };
   /* -------------------------------------------------------------------------- */
   try {
@@ -21,7 +21,7 @@ async function getChars(param) {
   }
 }
 
-async function getEpisode(param) {
+export async function getEpisode(param) {
   const options = { method: "GET" };
   try {
     const response = await fetch(`${param}`, options);
@@ -38,7 +38,7 @@ async function getEpisode(param) {
   }
 }
 
-async function observer() {
+export async function observer() {
   document
     .querySelector("main")
     .insertAdjacentHTML("beforeend", "<div id='observer'></div>");
@@ -49,7 +49,6 @@ async function observer() {
       entries[0].isIntersecting === true &&
       cardsSection.children.length !== 0
     ) {
-      console.log(nextPage);
       if (nextPage !== null) {
         await renderCards(nextPage);
       }
@@ -58,7 +57,7 @@ async function observer() {
   observer.observe(document.getElementById("observer"));
 }
 
-async function renderCards(param, param2) {
+export async function renderCards(param, param2) {
   //parametro1 é a URL inteira de como os personagens devem ser renderizados! Você pode construir uma string com a URL+filtros e passar eles como parâmetro! facilimo!
   const cardSection = document.getElementById("cardsSection");
   /*esse if deve ser usado pra decidir se o código 
@@ -123,5 +122,4 @@ reseta a página ou só adiciona conteúdo. Como underfined
     });
   }
 }
-observer(); //adicionando obvserver no fim da página!
-// renderCards("https://rickandmortyapi.com/api/character", true); //render de quando o usuário carrega a página.
+

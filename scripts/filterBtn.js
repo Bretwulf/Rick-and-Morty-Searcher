@@ -1,10 +1,8 @@
-
-async function filter(){
+import { renderCards } from "./cardRender.js";
+export async function filter(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const input = document.querySelector('input')
-    if(localStorage.getItem("@rick-and-morty: filterButton")===null){
-        localStorage.setItem("@rick-and-morty: filterButton","All")
-    }
+    
 
     buttons.forEach(btn =>{
         btn.addEventListener("click", async ()=>{
@@ -46,7 +44,7 @@ async function filter(){
     })
 }
 
-function buttonSelected(){
+export function buttonSelected(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const pressedButton = localStorage.getItem("@rick-and-morty: filterButton")
     const buttonAll = document.getElementById("all-filter")
@@ -65,5 +63,3 @@ function buttonSelected(){
     })
 }
 
-filter()
-buttonSelected()
