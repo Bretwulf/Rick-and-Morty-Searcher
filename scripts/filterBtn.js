@@ -1,25 +1,40 @@
 
 async function filter(){
     const buttons = document.querySelectorAll(".filter-buttons")
+    const input = document.querySelector('input')
 
     buttons.forEach(btn =>{
         btn.addEventListener("click", async ()=>{
             const filter = btn.innerText
 
-            if(filter === "All"){
+            let search = ''
+
+            if (input.value.length > 0) {
+                console.log(input.value)
+                search = `&name=${input.value}`;
+            }
+
+            if(filter === "All" && input.value.length == 0){
                 renderCards(
-                    "https://rickandmortyapi.com/api/character",
+                    `https://rickandmortyapi.com/api/character/`,
                     true
                 );
-            }else if(filter === "Alive" || filter === "Dead" || filter === "Unknown"){
+            } else if (filter === "All" && input.value.length > 0) {
                 renderCards(
-                    `https://rickandmortyapi.com/api/character/?status=${filter}`,
+                `https://rickandmortyapi.com/api/character/?name=${input.value}`,
+                true
+                );
+            }
+            
+            else if (filter === "Alive" || filter === "Dead" || filter === "Unknown") {
+                renderCards(
+                    `https://rickandmortyapi.com/api/character/?status=${filter}${search}`,
                     true
                 );
             }else if(filter === "Female" || filter === "Male" || filter === "Genderless"){
                 renderCards(
-                    `https://rickandmortyapi.com/api/character/?gender=${filter}`,
-                    true
+                  `https://rickandmortyapi.com/api/character/?gender=${filter}${search}`,
+                  true
                 );
             }
 
