@@ -3,7 +3,9 @@ import { openModal } from "./modal.js";
 let nextPage = "";
 
 async function getChars(param) {
-  const options = { method: "GET" };
+  const options = {
+    method: "GET",
+  };
   /* -------------------------------------------------------------------------- */
   try {
     const response = await fetch(
@@ -24,7 +26,9 @@ async function getChars(param) {
 }
 
 async function getEpisode(param) {
-  const options = { method: "GET" };
+  const options = {
+    method: "GET",
+  };
   try {
     const response = await fetch(`${param}`, options);
 
@@ -78,7 +82,6 @@ reseta a página ou só adiciona conteúdo. Como underfined
   } else {
     nextPage = characters.info.next;
     characters.results.forEach(async (element) => {
-      console.log(element);
       const firstSeen = await getEpisode(element.episode[0]);
       cardSection.insertAdjacentHTML(
         "beforeend",
@@ -99,28 +102,36 @@ reseta a página ou só adiciona conteúdo. Como underfined
         </li>
         `
       );
-     
 
-        document.getElementById(`card${element.id}`).addEventListener("click", () =>{
+      document
+        .getElementById(`card${element.id}`)
+        .addEventListener("click", () => {
           const contentModal = document.createElement("div");
-          contentModal.classList.add("container_content")
+          contentModal.classList.add("container_content");
           contentModal.insertAdjacentHTML(
             "beforeend",
             `
+            <div class="header_image">
             <img src="${element.image}" alt="">
-            <h3>${element.name} </h3>
+            <h3>${element.species} </h3>
+            </div>
             <div class="content_modal">
-            <p>Specie: ${element.species} </p>
-            <p>Status: ${element.status} </p>
-            <p>Location: ${element.location.name} </p>
+            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Name:</span> ${element.name} </p>
+            
+            <div class="paragraphs">
+            <span class="font16 font-regular font-color-adaptable">Status:</span>
+           
+            <p class="status-pip font12 font-thin font-color-white-fixed">  ${element.status} </p>
+            </div>
+            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Last know location:</span> ${element.location.name} </p>
+            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">First seen in:</span> ${firstSeen.name} </p>
             </div>
           
           `
           );
+
           openModal(contentModal);
-        })
-       
-   
+        });
 
       /* -------------------------------------------------------------------------- */
       if (element.species === "Alien") {
