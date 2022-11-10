@@ -11,6 +11,7 @@ icon.addEventListener('click', ()=>{input.focus()})
 async function search() {
   const filterBtns = [...document.querySelectorAll('#filterSection button')]
   const filterSelec = document.getElementById("select-filter")
+  const filterDiv = document.getElementById("div-buttons")
   const selectedBtn = filterBtns.filter(btn => btn.classList.contains('filter-buttons-selected'))
 
 
@@ -18,22 +19,24 @@ async function search() {
   try {
 
     let filter;
-    if (selectedBtn[0].innerText != 'All') {
+    if(filterDiv===null)
+    {if (selectedBtn[0].innerText != 'All') {
       if (selectedBtn[0].innerText == 'Alive' || selectedBtn[0].innerText == 'Dead' || selectedBtn[0].innerText == 'Unknown') {
         filter = `&status=${selectedBtn[0].innerText}`
       }
       if (selectedBtn[0].innerText == 'Female' || selectedBtn[0].innerText == 'Male' || selectedBtn[0].innerText == 'Genderless') {
         filter = `&gender=${selectedBtn[0].innerText}`;
       }
-    }
-    if (filterSelec.value != 'All') {
+    }}
+    else
+    {if (filterSelec.value != 'All') {
       if (filterSelec.value == 'Alive' || filterSelec.value == 'Dead' || filterSelec.value == 'Unknown') {
         filter = `&status=${filterSelec.value}`
       }
       if (filterSelec.value == 'Female' || filterSelec.value == 'Male' || filterSelec.value == 'Genderless') {
         filter = `&gender=${filterSelec.value}`;
       }
-    }
+    }}
     if (filter) {
       if (select.value == "species" || select.value == "All") {
              
