@@ -33,16 +33,21 @@
 #div-select{
     display: none;
     width: 100%;
+    
 }
 
-#select-filter{
-    color: var(--color-grey100);
-    width: 30%;
+#select-filter{  
+    cursor: pointer;
+    color: var(--color-alien-green);
+    width: 80%;
     padding: 7px;
     text-align: center;
+    outline: 0;
+    border: 1px solid var(--color-alien-green);
+    
 }
 
-@media (max-width: 600px){
+@media (max-width: 900px){
     #div-buttons{
         display:  none;
     }

@@ -14,7 +14,7 @@
   outline: 0;
   border: 1px solid var(--color-alien-green);
   border-radius: 16px;
-  background: var(--color-white-fixed);
+  background: var(--color-background);
   color: var(--color-alien-green);
   appearance: none;
   -webkit-appearance: none;

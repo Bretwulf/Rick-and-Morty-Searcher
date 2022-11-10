@@ -52,14 +52,7 @@
     --box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.75);
 }
 
-.dark-mode:root{
-    /* --------------------------------- colors --------------------------------- */
-    --color-background: rgb(42, 41, 41);
-    --color-grey100: #ffffff;
-    --radius1: 1rem;
-    --radius-round: 50%;
-    --box-shadow: 0px 2px 16px 0px rgba(137, 133, 133, 0.75);
-}
+
 @media (prefers-color-scheme: dark){
     :root{
         /* --------------------------------- colors --------------------------------- */
