@@ -1,5 +1,7 @@
+import { renderCards } from "./cardRender.js"
 
-async function filter(){
+
+export async function filter(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const input = document.querySelector('input')
     const select = document.querySelector("#select-filter")
@@ -80,7 +82,7 @@ async function filter(){
     })
 }
 
-function buttonSelected(){
+export function buttonSelected(){
     const buttons = document.querySelectorAll(".filter-buttons")
     const pressedButton = localStorage.getItem("@rick-and-morty: filterButton")
     const buttonAll = document.getElementById("all-filter")
@@ -102,11 +104,11 @@ function buttonSelected(){
     })
 }
 
-function optionSelected(){
+export function optionSelected(){
     const select = document.querySelector("#select-filter")
     const options = [...select.options]
     const pressedButton = localStorage.getItem("@rick-and-morty: filterButton")
-    console.log(options)
+
     options.forEach(opt =>{
         if(opt.value === pressedButton){
             opt.selected = true
@@ -116,7 +118,3 @@ function optionSelected(){
         }
     })
 }
-
-filter()
-buttonSelected()
-optionSelected()

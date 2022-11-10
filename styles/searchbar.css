@@ -1,8 +1,10 @@
 header {
     height: 60vh;
-    background-image: url('./../assets/imgs/background.jpg');
+    background-image: url('../assets/imgs/WallpaperDog-17058391.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+   
 
     display: flex;
     align-items: center;
@@ -23,18 +25,18 @@ header form input {
     height: 100%;
     padding: 0 14px;
     outline: none;
-    border: 2px solid var(--color-logo);
+    border: 2px solid var(--color-alien-green);
 
-    color: var(--color-logo);
+    color: var(--color-alien-green);
     font-size: var(--font-size16);
 }
 
 input::placeholder{
-    color: var(--color-logo);
+    color: var(--color-alien-green);
 }
 
 header div img {
-    background-color: var(--color-logo);
+    background-color: var(--color-alien-green);
     height: 60%;
     opacity: 70%;
 }
@@ -53,7 +55,7 @@ header small {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-logo);
+    background-color: var(--color-alien-green);
 }
 
 form {
@@ -73,4 +75,10 @@ form .select-wrapper {
     position: absolute;
     right: 14px;
     top: 15px;
+}
+
+@media(max-width: 900px){
+    header > div {
+        max-width: 90%;
+    }
 }

@@ -32,10 +32,11 @@
                 <img src="./assets/imgs/searchIcon.png" alt="">
             </small>
             <form action="">
-                <input type="text" placeholder="Procurando por um personagem?" maxlength="50">
+                <input type="text" placeholder="Looking for someone?" maxlength="50">
                 <div class="select-wrapper">
                     <select name="" id="">
                         <option value="species" selected disabled>Species</option>
+                        <option value="All">All</option>
                         <option value="Alien">Alien</option>
                         <option value="Animal">Animal</option>
                         <option value="Cronenberg">Cronenberg</option>
@@ -75,15 +76,15 @@
                 </select>
             </div>
         </section>
+   
         <ul id="cardsSection">
         </ul>
     </main>
-    <script type="module" src="index.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="./scripts/cardRender.js"></script>
-    <script src="./scripts/filterBtn.js"></script>
-    <script src="./scripts/search.js"></script>
-</body>
 
+    <script type="module" src="index.js"></script>
+    <script type="module" src="./scripts/cardRender.js"></script>
+    <script type="module" src="./scripts/filterBtn.js"></script>
+    <script type="module" src="./scripts/search.js"></script>
+    <script type="module" src="./scripts/modal.js"></script>
+</body>
 </html>
