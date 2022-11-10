@@ -9,7 +9,7 @@
 
 .container{
     width:100%;
-    max-width: 1200px;
+    max-width: 75rem;
 }
 
 
@@ -22,7 +22,7 @@
     --color-alive-green: #1d824b;
     --color-alien-green:#84ae27;
     --color-background: #ffff;
-    --color-grey100: #a0b3af;
+    --color-grey100: #5e6060;
     --color-white-fixed: #ffff;
     --color-logo: #01B1C6;
     /* ------------------------------- text-sizes ------------------------------- */
@@ -49,7 +49,7 @@
     /* ------------------------------ stylizations ------------------------------ */
     --radius1: 1rem;
     --radius-round: 50%;
-    --box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.75);
+    --box-shadow: 0rem .125rem 1rem 0rem rgba(0,0,0,0.75);
 }
 
 
@@ -60,11 +60,11 @@
         --color-grey100: #ffffff;
         --radius1: 1rem;
         --radius-round: 50%;
-        --box-shadow: 0px 2px 16px 0px rgba(137, 133, 133, 0.75);
+        --box-shadow: 0rem .125rem 1rem 0rem rgba(137, 133, 133, 0.75);
     }  
 }
 
-@media(max-width: 900px){
+@media(max-width: 56.25rem){
 :root{
     --charcard-desktop-width:20rem;
     --charcard-padding: .625rem;

@@ -89,7 +89,7 @@ reseta a página ou só adiciona conteúdo. Como underfined
         <li id="card${element.id}" class="card-base animate__animated animate__fadeInUp animate__fast event">
         <div class="image-div">
          <img class="card-image" src=${element.image}>
-         <p class="text-center font16 font-regular font-color-adaptable species-pip">${element.species==="unknown"?"Unknown":element.species}</p>
+         <p class="text-center font16 font-regular font-color-white-fixed species-pip">${element.species==="unknown"?"Unknown":element.species}</p>
         </div>
         <div class="card-content">
             <h4 class="font20 font-regular font-color-adaptable">${element.name}</h4>

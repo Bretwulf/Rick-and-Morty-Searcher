@@ -1,7 +1,7 @@
 .select-wrapper {
   position: relative;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: .9375rem;
   width: 100%;
 }
 
@@ -10,10 +10,10 @@
   display: inline-block;
   width: 100%;
   cursor: pointer;
-  padding: 2px 10px;
+  padding: .125rem .625rem;
   outline: 0;
-  border: 1px solid var(--color-alien-green);
-  border-radius: 16px;
+  border: .0625rem solid var(--color-alien-green);
+  border-radius: 1rem;
   background: var(--color-background);
   color: var(--color-alien-green);
   appearance: none;
@@ -38,11 +38,11 @@
 }
 .select_arrow {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: .5rem;
+  right: .5rem;
   pointer-events: none;
   border-style: solid;
-  border-width: 8px 5px 0px 5px;
+  border-width: .5rem .3125rem 0rem .3125rem;
   border-color: var(--color-alien-green) transparent transparent transparent;
 }
 
