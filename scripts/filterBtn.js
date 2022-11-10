@@ -45,7 +45,7 @@ export async function filter(){
         })
     })
 
-    select.addEventListener("change", async ()=>{
+    select.addEventListener("input", async ()=>{
         const filter = select.value
         console.log(filter)
         let search = ''
@@ -97,9 +97,6 @@ export function buttonSelected(){
         
         if(btn.innerText === pressedButton){
             btn.click()
-        }else if (pressedButton === null){
-            localStorage.setItem("@rick-and-morty: filterButton", "All")
-            buttonAll.click()
         }
     })
 }
@@ -112,9 +109,6 @@ export function optionSelected(){
     options.forEach(opt =>{
         if(opt.value === pressedButton){
             opt.selected = true
-        }else if(pressedButton === null){
-            localStorage.setItem("@rick-and-morty: filterButton", "All")
-            options[1].selected = true
         }
     })
 }

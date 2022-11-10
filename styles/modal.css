@@ -13,7 +13,7 @@
 
 .modal-container {
     max-width: 90%;
-    width: 40.625rem;
+    width: 35.625rem;
     position: relative;
     border-radius: .5rem;
     box-sizing: border-box;
@@ -65,7 +65,7 @@
 }
 
 .content-paragraph{
-    color: var(--darkreader-text--color-grey100);
+    
     font-weight: 300;
 }
 

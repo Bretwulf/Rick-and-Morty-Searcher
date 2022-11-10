@@ -116,7 +116,7 @@ reseta a página ou só adiciona conteúdo. Como underfined
           } 
           console.log(src)
           const contentModal = document.createElement("div");
-          contentModal.classList.add("container-content");
+          contentModal.classList.add("container-content", "animate__animated", "animate__fadeIn");
           contentModal.id = "list_modal";
           contentModal.insertAdjacentHTML(
             "beforeend",
