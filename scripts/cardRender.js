@@ -41,7 +41,7 @@ export async function getEpisode(param) {
       throw Error(error.error);
     }
   } catch (error) {
-    console.log(error.message);
+    
   }
 }
 
@@ -114,7 +114,7 @@ reseta a página ou só adiciona conteúdo. Como underfined
           } else if(element.status==="Dead"){
             src = "assets/imgs/deadpip.svg"
           } 
-          console.log(src)
+         
           const contentModal = document.createElement("div");
           contentModal.classList.add("container-content");
           contentModal.id = "list_modal";

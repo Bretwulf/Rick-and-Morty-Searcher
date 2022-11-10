@@ -13,7 +13,7 @@ export async function filter(){
             let search = ''
 
             if (input.value.length > 0) {
-                console.log(input.value)
+                
                 search = `&name=${input.value}`;
             }
 
@@ -45,13 +45,13 @@ export async function filter(){
         })
     })
 
-    select.addEventListener("change", async ()=>{
+    select.addEventListener("input", async ()=>{
         const filter = select.value
-        console.log(filter)
+       
         let search = ''
 
         if (input.value.length > 0) {
-            console.log(input.value)
+           
             search = `&name=${input.value}`;
         }
 

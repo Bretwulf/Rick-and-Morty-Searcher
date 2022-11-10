@@ -1,5 +1,5 @@
 import { observer } from "./scripts/cardRender.js";
-import { filter, buttonSelected } from "./scripts/filterBtn.js";
+import { filter, buttonSelected, optionSelected } from "./scripts/filterBtn.js";
 
 function setFilterWhenNull(){
     if(localStorage.getItem("@rick-and-morty: filterButton")===null){
@@ -11,6 +11,7 @@ async function onLoad(){
     setFilterWhenNull()
     await filter()
     buttonSelected()
+    optionSelected()
     observer() 
 }
 
