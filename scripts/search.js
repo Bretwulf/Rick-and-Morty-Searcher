@@ -19,7 +19,8 @@ async function search() {
   try {
 
     let filter;
-    if(filterDiv===null)
+    
+    if(filterDiv.offsetParent!==null)
     {if (selectedBtn[0].innerText != 'All') {
       if (selectedBtn[0].innerText == 'Alive' || selectedBtn[0].innerText == 'Dead' || selectedBtn[0].innerText == 'Unknown') {
         filter = `&status=${selectedBtn[0].innerText}`
