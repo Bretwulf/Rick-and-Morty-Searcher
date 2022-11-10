@@ -89,11 +89,11 @@ reseta a página ou só adiciona conteúdo. Como underfined
         <li id="card${element.id}" class="card-base animate__animated animate__fadeInUp animate__fast event">
         <div class="image-div">
          <img class="card-image" src=${element.image}>
-         <p class="text-center font16 font-regular font-color-adaptable species-pip">${element.species}</p>
+         <p class="text-center font16 font-regular font-color-adaptable species-pip">${element.species==="unknown"?"Unknown":element.species}</p>
         </div>
         <div class="card-content">
             <h4 class="font20 font-regular font-color-adaptable">${element.name}</h4>
-            <div class="status-pip font12 font-thin font-color-white-fixed">${element.status}</div>
+            <div class="status-pip font12 font-thin font-color-white-fixed">${element.status==="unknown"?"Unknown":element.status}</div>
             <p class="font12 font-thin font-color-adaptable">last known location:</p>
             <p class="font16 font-regular font-color-adaptable">${element.location.name}</p>
             <p class="font12 font-thin font-color-adaptable">first seen in</p>
@@ -106,42 +106,36 @@ reseta a página ou só adiciona conteúdo. Como underfined
       document
         .getElementById(`card${element.id}`)
         .addEventListener("click", () => {
+          let src = ""
+          if(element.status==='Alive'){
+            src = "assets/imgs/alivepip.svg"
+          } else if(element.status==="unknown"){
+            src = "assets/imgs/unknownpip.svg"
+          } else if(element.status==="Dead"){
+            src = "assets/imgs/deadpip.svg"
+          } 
+          console.log(src)
           const contentModal = document.createElement("div");
-          contentModal.classList.add("container_content");
+          contentModal.classList.add("container-content");
           contentModal.id = "list_modal";
           contentModal.insertAdjacentHTML(
             "beforeend",
             `
-            <div class="header_image">
-            <img src="${element.image}" alt="">
-            <h3 class="specie">${element.species} </h3>
+            <div class="header-image">
+              <img src="${element.image}" alt="">
+              <div class="status-bar">
+                <img class="alive-pip" src="${src}"}>
+                <p class="text-center font16 font-regular font-color-adaptable">${element.status==="unknown"?"Unknown":element.status} - ${element.species==="unknown"?"Unknown":element.species}</p>
+              </div>
             </div>
-            <div class="content_modal">
-            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Name:</span> ${element.name} </p>
-            
-            <div class="paragraphs">
-            <span class="font16 font-regular font-color-adaptable">Status:</span>
-           
-            <p class="status-pip font12 font-thin font-color-white-fixed stt" >  ${element.status} </p>
+            <div class="content-modal">
+              <h3 class="font32 font-black font-color-adaptable">${element.name} </h3>
+              <p class="font16 font-regular font-color-adaptable"><span class="font20 font-bold font-color-adaptable">Origin:</span> ${element.origin.name} </p>
+              <p class="font16 font-regular font-color-adaptable"><span class="font20 font-bold font-color-adaptable">Last know location:</span> ${element.location.name} </p>
+              <p class="font16 font-regular font-color-adaptable"><span class="font20 font-bold font-color-adaptable">First seen in:</span> ${firstSeen.name} </p>
             </div>
-            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">Last know location:</span> ${element.location.name} </p>
-            <p class="font16 font-regular font-color-adaptable"><span class="font16 font-regular font-color-adaptable">First seen in:</span> ${firstSeen.name} </p>
-            </div>
-          
           `
           );
-          if (element.status === "Dead") {
-            document
-              .getElementById(`card${element.id}`)
-              .querySelector(".stt")
-              .classList.add("status-pip-dead");
-          } else if (element.status === "unknown") {
-            document
-              .getElementById(`card${element.id}`)
-              .querySelector(".stt")
-              .classList.add("status-pip-unknown");
-          }
-
           openModal(contentModal);
         });
 
@@ -169,6 +163,7 @@ reseta a página ou só adiciona conteúdo. Como underfined
           .querySelector(".status-pip")
           .classList.add("status-pip-unknown");
       }
+      
     });
   }
 }

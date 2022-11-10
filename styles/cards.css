@@ -52,7 +52,7 @@
     background-color: rgb(122, 123, 24);
 }
 
-.species-pip-poopy-butthole {
+.species-pip-poopybutthole {
     background-color: rgb(76, 38, 10);
 }
 
@@ -83,6 +83,7 @@
     border: solid 1px var(--color-grey100);
     align-items: center;
     border-radius: var(--radius1);
+    cursor: pointer;
 
 }
 

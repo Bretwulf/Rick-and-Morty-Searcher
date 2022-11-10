@@ -3,7 +3,8 @@ export const openModal = (children) => {
 
   const backgroundContainer = document.createElement("section");
   const mainContainer = document.createElement("section");
-  const closeModalButton = document.createElement("button");
+  const closeModalButton = document.createElement("img");
+  closeModalButton.src = "assets/imgs/rick and morty x.webp"
 
   backgroundContainer.classList.add("modal-background");
   backgroundContainer.id = "modal_daddy";
