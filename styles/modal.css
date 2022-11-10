@@ -106,8 +106,8 @@
         left: 0;
     }
     .modal-container {
-        max-width: 100%;
-        width: 100%;
+        max-width: 80%;
+        width: 70%;
         position: relative;
         border-radius: 8px;
         box-sizing: border-box;
