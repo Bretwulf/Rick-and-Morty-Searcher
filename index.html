@@ -1,39 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rick and Morty page dedicated to search it's characters and details about them.">
-    <meta name="keywords" content="Rick, Morty, Search, Page, API">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="/styles/globalStyles.css">
-    <link rel="stylesheet" href="/styles/text.css">
-    <link rel="stylesheet" href="/styles/cards.css">
-    <link rel="stylesheet" href="/styles/modal.css">
-    <link rel="stylesheet" href="/styles/searchbar.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-    <title>Rick and Morty Searcher</title>
+<link>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rick and Morty page dedicated to search it's characters and details about them.">
+<meta name="keywords" content="Rick, Morty, Search, Page, API">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="styles/globalStyles.css">
+<link rel="stylesheet" href="styles/select.css">
+<link rel="stylesheet" href="styles/text.css">
+<link rel="stylesheet" href="styles/buttons.css">
+<link rel="stylesheet" href="styles/modal.css">
+<link rel="stylesheet" href="styles/cards.css">
+<link rel="stylesheet" href="styles/searchbar.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<title>Rick and Morty Searcher</title>
 
 </head>
 
 <body>
-    <header id="Header"></header>
+    <header id="Header">
+        <div>
+            <small>
+                <img src="./assets/imgs/searchIcon.png" alt="">
+            </small>
+            <form action="">
+                <input type="text" placeholder="Looking for someone?" maxlength="50">
+                <div class="select-wrapper">
+                    <select name="" id="">
+                        <option value="species" selected disabled>Species</option>
+                        <option value="All">All</option>
+                        <option value="Alien">Alien</option>
+                        <option value="Animal">Animal</option>
+                        <option value="Cronenberg">Cronenberg</option>
+                        <option value="Disease">Disease</option>
+                        <option value="Human">Human</option>
+                        <option value="Humanoid">Humanoid</option>
+                        <option value="Mythological Creature">Mythological Creature</option>
+                        <option value="Poopybutthole">Poopybutthole</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                    <div class="select_arrow"></div>
+                </div>
+            </form>
+        </div>
+    </header>
     <main>
-        <section id="filterSection">
-
+        <section id="filterSection" class="container">
+            <div id="div-buttons">
+                <button class="filter-buttons" id="all-filter">All</button>
+                <button class="filter-buttons">Alive</button>
+                <button class="filter-buttons">Dead</button>
+                <button class="filter-buttons">Female</button>
+                <button class="filter-buttons">Male</button>
+                <button class="filter-buttons">Genderless</button>
+                <button class="filter-buttons">Unknown</button>
+            </div>
+            <div id="div-select">
+                <select name="" id="select-filter">
+                    <option value="" hidden disabled selected>Filtros</option>
+                    <option value="All">All</option>
+                    <option value="Alive">Alive</option>
+                    <option value="Dead">Dead</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Genderless">Genderless</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
         </section>
-        <section id="cardsSection">
-
-        </section>
+   
+        <ul id="cardsSection">
+        </ul>
     </main>
-    <script src="index.js"></script>
 
+    <script type="module" src="index.js"></script>
+    <script type="module" src="scripts/cardRender.js"></script>
+    <script type="module" src="scripts/filterBtn.js"></script>
+    <script type="module" src="scripts/search.js"></script>
+    <script type="module" src="scripts/modal.js"></script>
 </body>
-
 </html>

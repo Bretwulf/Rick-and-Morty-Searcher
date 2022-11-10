@@ -18,8 +18,8 @@
     font-size: var( --font-size28); 
 }
 
-.font36{
-    font-size: var( --font-size36); 
+.font32{
+    font-size: var( --font-size32); 
 }
 
 .font-bold{
@@ -40,4 +40,7 @@
 }
 .font-color-white-fixed{
     color:var(--color-white-fixed);
+}
+.text-center{
+    text-align: center;
 }

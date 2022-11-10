@@ -1,0 +1,56 @@
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.select-wrapper select {
+  font-family: "Arial";
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 2px 10px;
+  outline: 0;
+  border: 1px solid var(--color-alien-green);
+  border-radius: 16px;
+  background: var(--color-background);
+  color: var(--color-alien-green);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select-wrapper select::-ms-expand {
+  display: none;
+}
+
+.select-wrapper select:hover,
+.select-wrapper select:focus {
+  color: var(--color-alien-green);
+  background: var(--color-white-fixed);
+}
+
+.select-wrapper select:disabled {
+  opacity: 0.5;
+  
+  pointer-events: none;
+}
+.select_arrow {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0px 5px;
+  border-color: var(--color-alien-green) transparent transparent transparent;
+}
+
+.select-wrapper select:hover ~ .select_arrow,
+.select-wrapper select:focus ~ .select_arrow {
+  border-top-color: var(--color-alien-green);
+}
+
+.select-wrapper select:disabled ~ .select_arrow {
+  border-top-color: var(--color-alien-green);
+}
