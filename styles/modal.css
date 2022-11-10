@@ -13,34 +13,34 @@
 
 .modal-container {
     max-width: 90%;
-    width: 30%;
+    width: 40.625rem;
     position: relative;
-    border-radius: 8px;
+    border-radius: .5rem;
     box-sizing: border-box;
     overflow: hidden;
 }
 
 
 .modal-close {
-    height: 50px;
-    width: 50px;
+    height: 3.125rem;
+    width: 3.125rem;
     object-fit: contain;
     background: none;
     position: absolute;
-    top:10px;
-    right: 10px;
+    top:.625rem;
+    right: .625rem;
     cursor: pointer;
     z-index: 5;
 }
 
 .container-content {
     overflow: hidden;
-    border: 1px solid var(--darkreader-border--color-grey100);
-    border-radius: 8px;
+    border: .0625rem solid var(--darkreader-border--color-grey100);
+    border-radius: .5rem;
 }
 .header-image{
     position: relative;
-    top: 0px;
+    top: 0rem;
     width: 100%;
     height: max-content;   
 }
@@ -57,9 +57,9 @@
 }
 .status-bar{
     position: absolute;
-    bottom: 3px;
+    bottom: .1875rem;
     display: flex;
-    gap: 2px;
+    gap: .125rem;
     align-items: center;
     justify-content: flex-start;
 }
@@ -70,13 +70,13 @@
 }
 
 .content-modal{
-    padding: 20px;
+    padding: 1.25rem;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 10px;
+    gap: .625rem;
 }
 
 .content-modal > h3{
@@ -85,14 +85,14 @@
 .paragraphs{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: .3125rem;
 }
 
 
 
 
 
-@media(max-width:900px) {
+@media(max-width:56.25rem) {
     .modal-background {
         background-color: rgba(0, 0, 0, 0.3);
         display: flex;
@@ -106,34 +106,34 @@
         left: 0;
     }
     .modal-container {
-        max-width: 80%;
-        width: 70%;
+        max-width: 100%;
+        width: 25rem;
         position: relative;
-        border-radius: 8px;
+        border-radius: .5rem;
         box-sizing: border-box;
     }
     .modal-close {
-        height: 50px;
-        width: 50px;
+        height: 3.125rem;
+        width: 3.125rem;
         object-fit: contain;
         background: none;
         position: absolute;
-        top:10px;
-        right: 10px;
+        top:.625rem;
+        right: .625rem;
         cursor: pointer;
     }
     .container-content {
-        border: 1px solid var(--color-grey100);
-        border-radius: 8px;
+        border: .0625rem solid var(--color-grey100);
+        border-radius: .5rem;
     }
     
     .content-modal{
         width: 100%;
-        margin-top: 20px;
+        margin-top: 1.25rem;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 32px;
+        gap: 2rem;
     }
     
     .content-modal > h3{
@@ -142,6 +142,6 @@
     .paragraphs{
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: .75rem;
     }
 }
