@@ -54,28 +54,37 @@
     </header>
     <main>
         <section id="filterSection" class="container">
-            <button class="filter-buttons" id="all-filter">All</button>
-            <button class="filter-buttons">Alive</button>
-            <button class="filter-buttons">Dead</button>
-            <button class="filter-buttons">Female</button>
-            <button class="filter-buttons">Male</button>
-            <button class="filter-buttons">Genderless</button>
-            <button class="filter-buttons">Unknown</button>
+            <div id="div-buttons">
+                <button class="filter-buttons" id="all-filter">All</button>
+                <button class="filter-buttons">Alive</button>
+                <button class="filter-buttons">Dead</button>
+                <button class="filter-buttons">Female</button>
+                <button class="filter-buttons">Male</button>
+                <button class="filter-buttons">Genderless</button>
+                <button class="filter-buttons">Unknown</button>
+            </div>
+            <div id="div-select">
+                <select name="" id="select-filter">
+                    <option value="" hidden disabled selected>Filtros</option>
+                    <option value="All">All</option>
+                    <option value="Alive">Alive</option>
+                    <option value="Dead">Dead</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Genderless">Genderless</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
         </section>
    
         <ul id="cardsSection">
         </ul>
     </main>
 
-
-
-
     <script type="module" src="index.js"></script>
     <script type="module" src="./scripts/cardRender.js"></script>
     <script type="module" src="./scripts/filterBtn.js"></script>
     <script type="module" src="./scripts/search.js"></script>
     <script type="module" src="./scripts/modal.js"></script>
-
 </body>
-
 </html>
