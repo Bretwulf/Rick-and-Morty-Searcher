@@ -2,7 +2,7 @@ import { renderCards } from "./cardRender.js";
 
 const select = document.querySelector('select')
 const input = document.querySelector("input");
-select.addEventListener("change", search)
+select.addEventListener("input", search)
 input.addEventListener("keyup", search);
 
 const icon = document.querySelector('header div small')
@@ -10,7 +10,9 @@ icon.addEventListener('click', ()=>{input.focus()})
 
 async function search() {
   const filterBtns = [...document.querySelectorAll('#filterSection button')]
+  const filterSelec = document.getElementById("select-filter")
   const selectedBtn = filterBtns.filter(btn => btn.classList.contains('filter-buttons-selected'))
+
 
   
   try {
@@ -24,10 +26,17 @@ async function search() {
         filter = `&gender=${selectedBtn[0].innerText}`;
       }
     }
-
+    if (filterSelec.value != 'All') {
+      if (filterSelec.value == 'Alive' || filterSelec.value == 'Dead' || filterSelec.value == 'Unknown') {
+        filter = `&status=${filterSelec.value}`
+      }
+      if (filterSelec.value == 'Female' || filterSelec.value == 'Male' || filterSelec.value == 'Genderless') {
+        filter = `&gender=${filterSelec.value}`;
+      }
+    }
     if (filter) {
       if (select.value == "species" || select.value == "All") {
-              console.log(filter)
+             
               renderCards(
                 `https://rickandmortyapi.com/api/character/?name=${input.value}${filter}`,
                 true
@@ -54,6 +63,6 @@ async function search() {
     }
 
   } catch (error) {
-    console.log(error);
+    
   }
 }
