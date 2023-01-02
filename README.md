@@ -1,1 +1,1 @@
-# m2-projeto-em-equipe
+Projeto final em équipe do Módulo 2 (Javascript/CSS/HTML Avançados) da Kenzie Academy, que utiliza Rick and Morty API para criar um buscador de personagens, com várias opções de filtros e responsividade mobile totalmente aplicada. A página inicial por padrão renderiza todos os personagens, mas os filtros escolhidos pelo usuário permanecem entre sessões.
